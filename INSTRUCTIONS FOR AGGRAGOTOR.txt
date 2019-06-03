@@ -1,0 +1,53 @@
+This Python script collects and sorts new classifieds added to kijiij at set intervals (currently every hour) and if it meets the criterion  emails a notification of the posting to my email
+
+The first thing to do is to install MailAlert on  harddrive. This is the program that is used to send the emails.
+
+Search for the program mailalert from sourceforge with Google and install it.
+
+The programs that I have are set up to run in the C:\MailAlert folder on the computer, so  install into the same folder on your computer.
+
+There are 4 scripts that are run in sequence every hour.
+They are:
+
+chk_files_addnew.py
+chk_files_filter.py
+chk_files_mail.py
+mail_stuff.cmd      <--- This file is created by chk_files_mail.py
+
+?
+ kijiji_searches.db3?
+The python scripts use a SQLite database called kijiji_searches.db3, which store the search terms, exclusion terms and results.
+
+The scripts are attached to this email and are pretty self explanatory. If you need any help deciphering this,  give me a call or email.
+
+
+TO SET UP MAIL ALERT PROGRAM  
+
+Replace the text [email address] with the email address that will be sending the Kijiji Alert messages.
+
+Replace the text [email password with the password for the email address that will be sending messages
+
+Save the text to a file called MailAlert.ini in the C:\MailAlert  folder.
+
+That should get the emails working.
+
+[CONFIGURATION]
+To=[email address]
+From=[email address]
+;ReplyTo=[email address]
+;Cc=
+;Bcc=
+FullName=Mail Alert
+SMTPServer=smtp.gmail.com
+SMTPPort=587
+EnableAutoTLS=yes
+EnableSMTPS=no
+Username=[email address]
+Importance=High
+PlaintextOnly=yes
+;VerboseMode=yes
+Charset=ISO-8859-1
+Password=[email password]
+
+
+
