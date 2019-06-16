@@ -32,11 +32,11 @@ try:
 	del cursor
 	inSearch.close()
 except:
-	print 'database kijiji_searches must be created.'
+	print('database kijiji_searches must be created.')
 	time.sleep(10)
 	exit()
 
-print str(len(all_rows)) + ' records to be evaluated for this filter.\n'
+print(str(len(all_rows)) + ' records to be evaluated for this filter.\n')
 
 for row in all_rows:
 	rowID = row[0]
@@ -49,11 +49,11 @@ for row in all_rows:
 	base = 0
 	OK = True
 	
-	#print 'Examining : ' + searchText
-	#print '\n'
+	#print('Examining : ' + searchText
+	#print('\n'
 	
-	print 'Excluding : ' + ', '.join(terms)
-	print '\n'
+	print('Excluding : ' + ', '.join(terms))
+	print('\n')
 	
 	
 	base = 0
@@ -80,7 +80,7 @@ for row in all_rows:
 			bad = False
 	
 	if bad == True:
-		#print '*** suspending this record for filter violations ***'
+		#print('*** suspending this record for filter violations ***'
 		OK = False
 	
 	if OK == False:
@@ -91,8 +91,8 @@ for row in all_rows:
 			cur.execute(sql)
 			out.commit()
 		except:
-			print "Unexpected error: ", sys.exc_info()[0], sys.exc_info()[1]
-			print sql
+			print("Unexpected error: ", sys.exc_info()[0], sys.exc_info()[1])
+			print(sql)
 		del cur
 		out.close()
 		
@@ -102,7 +102,7 @@ m = open('chk_files_sql.sql', 'r')
 all_sql = m.read().split('\n')
 m.close()
 
-inSearch = sqlite3.connect('c:/MailAlert/kijiji_searches.db3')
+inSearch = sqlite3.connect(WrkDir+'/kijiji_searches.db3')
 cursor = inSearch.cursor()
 
 for sql in all_sql:

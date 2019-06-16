@@ -24,13 +24,13 @@ if os.getcwd() != WrkDir:
 		
 # delete all alert_*.html files
 
-for filename in os.listdir('c:\\mailalert'):
-	#print filename, filename[0:5], filename[-5:]
+for filename in os.listdir(WrkDir):
+	#print(filename, filename[0:5], filename[-5:]
 	if filename[0:6] == 'alert_':
-		#print "*"
+		#print("*"
 		if filename[-5:] == '.html':
-			#print filename
-			os.remove("c:\\mailalert\\" + filename)
+			#print(filename
+			os.remove(WrkDir + filename)
 			
 
 		
@@ -48,11 +48,11 @@ try:
 	del cursor
 	inSearch.close()
 except:
-	print 'database kijiji_searches must be created.'
+	print('database kijiji_searches must be created.')
 	time.sleep(10)
 	exit()
 
-print str(len(all_rows)) + ' emails to be sent.\n'
+print(str(len(all_rows)) + ' emails to be sent.\n')
 
 
 # write the command file
@@ -116,7 +116,7 @@ for row in all_rows:
 #				xCmd = xCmd + '-u ' + chr(34) + cc_to + chr(34) + ' '
 #			xCmd = xCmd + '-s ' + chr(34) + mail_title + chr(34) + ' -b @alert_' + mail_title.replace(' ', '_') + '.html'
 #			c = open('alert_' + mail_title.replace(' ', '_') + '.html', 'w')
-#			print owt
+#			print(owt
 #			c.write(owt)
 #			c.close()
 #			owt = ''
@@ -135,7 +135,7 @@ for row in all_rows:
 #				xCmd = xCmd + '-u ' + chr(34) + cc_to + chr(34) + ' '
 #			xCmd = xCmd + '-s ' + chr(34) + mail_title + chr(34) + ' -b @alert_' + mail_title.replace(' ', '_') + '.html'
 #			c = open('alert_' + mail_title.replace(' ', '_') + '.html', 'w')
-#			print owt
+#			print(owt
 #			c.write(owt)
 #			c.close()
 #			owt = ''
